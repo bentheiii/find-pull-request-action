@@ -39,6 +39,12 @@ inputs:
   labels:
     description: 'A comma-separated list of label names, all of which must be present for the PR to be returned'
     required: false
+  draft:
+    description: |
+      Filter to apply concerning draft PRs. False will exclude draft PRs, true will include draft PRs,
+      and null (default) will include all PRs.
+    required: false
+    default: 'null'
 
 outputs:
   number:
@@ -66,6 +72,8 @@ outputs:
   matching-pr-numbers:
     description: |
       A JSON string representing the array of pull request numbers matching the search criteria, e.g.: `[1,2,3]`
+  draft:
+    description: The Pull Request's draft state if one was found
 
 runs:
   using: 'node24'
