@@ -31090,7 +31090,7 @@ const main = async () => {
   }
   if (draft !== 'null') {
     const draftValue = draft === 'true'
-    prs = prs.filter(pr => pr.draft == null || pr.draft === draftValue)
+    prs = prs.filter(pr => pr.draft === draftValue)
   }
 
   core.setOutput('matching-pr-count', prs.length)
